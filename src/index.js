@@ -1,6 +1,7 @@
 import './less/index.less'
 
 // Your code goes here!
+document.addEventListener('load',window.alert("Welcome to my maximally-invasive site full of pop-ups and minimal functionality!"));
 const navAnchors = document.querySelectorAll("nav a");
 
 navAnchors.forEach(val => {
@@ -20,4 +21,17 @@ signupButtons.forEach(val => {
         event.target.addEventListener('mouseover', (event) => event.target.style.color = 'black');
         
     } )
-})
+} )
+// {Array.from(document.querySelectorAll("h1,h2,h3,h4,h5,h6,h7,p,a,button")).forEach(val => {
+//     val = val.innerHTML.split("").map(val => `<span>${val}</span>`).join(""); } )}
+// // console.log(allLetters);
+document.addEventListener('keydown',(event) => {
+    const textArray = Array.from(document.querySelectorAll("h1,h2,h3,h4,h5,h6,h7,p,a,button"));
+    textArray.forEach(val => {
+    val.innerHTML = val.innerHTML.split("").map( val => val === event.key && event.key !== "r" && event.key !== 'e' && event.key !== 'd' && event.key !== "c" && event.key !== "o" && event.key !== "l"  ? `<span style='color:red'>${event.key}</span>` : val).join("");
+    } );  
+}) 
+
+// document.addEventListener('keyup',event => {
+//     document.querySelectorAll("span").forEach( val => val.outerHTML = event.key); 
+// });
