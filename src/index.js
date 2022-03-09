@@ -15,11 +15,17 @@ document.addEventListener('keyup', event => {
             document.querySelector("h2").style.color = 'black';
         }
     } )
-        
+let firstImage = document.querySelector("img");
+firstImage.addEventListener("click",event => event.target.style.borderRadius = "50%");        
 navAnchors.forEach(val => {
     val.style.alignSelf = 'center';
     val.addEventListener('mouseover',(event) => event.target.style.fontSize = '2.5rem');
     val.addEventListener('mouseout',(event) => event.target.style.fontSize = '2rem');
+    val.addEventListener('focus', event => event.target.style.color = 'red');
+    val.addEventListener('blur', event => event.target.style.color = 'black');
+    val.addEventListener('dblclick', () => window.alert("Ouch! One click wasn't enough?"));
+    val.addEventListener('contextmenu', () => window.alert("Left-click! Not right!"));
+    
     } );
 const firstHeader = document.querySelector("h1");
 firstHeader.style.fontSize = "4rem";
